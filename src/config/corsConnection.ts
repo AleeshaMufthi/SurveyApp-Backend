@@ -1,7 +1,7 @@
 import cors from 'cors'
 
 const corsOptions = {
-    origin: process.env.FRONT_END_URL, 
+    origin: "*", 
     methods: ["GET", "POST"],
     credentials: true, 
   };

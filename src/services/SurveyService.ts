@@ -10,7 +10,15 @@ class SurveyService implements ISurveyService {
   }
 
   async createSurvey(data: ISurvey): Promise<ISurvey> {
-    return await this._surveyRepository.createSurvey(data);
+    try {
+        return await this._surveyRepository.createSurvey(data);
+      
+    } catch (error) {
+      console.log(error)
+      throw error
+      
+    }
+  
   }
 
   async getAllSurveys(): Promise<ISurvey[]> {

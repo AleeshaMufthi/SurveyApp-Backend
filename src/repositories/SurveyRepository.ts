@@ -4,7 +4,15 @@ import { ISurveyRepository } from "../interfaces/surveyInterfaces/ISurveyReposit
 
 class SurveyRepository implements ISurveyRepository {
   async createSurvey(data: ISurvey): Promise<ISurvey> {
-    return await surveyModel.create(data);
+    try {
+       return await surveyModel.create(data) as unknown as  ISurvey
+      
+    } catch (error) {
+      console.log(error)
+      throw error
+      
+    }
+   
   }
 
   async getAllSurveys(): Promise<ISurvey[]> {

@@ -10,6 +10,7 @@ export default class SurveyController {
 
   async createSurvey(req: Request, res: Response): Promise<void> {
     try {
+      console.log(req.body , "body")
       const survey = await this.surveyService.createSurvey(req.body);  // Use instance method
       console.log(survey,'survey');
       

@@ -3,9 +3,10 @@ import cors from 'cors'
 const corsOptions = {
     origin: "*", 
     methods: ["GET", "POST"],
-    credentials: true, 
+    Credential:true,
+    
   };
   
   const corsConnection = cors(corsOptions);
   
-  export default corsConnection;
+  export default corsConnection
